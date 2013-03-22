@@ -26,7 +26,7 @@ import android.content.res.Configuration;
 import android.database.ContentObserver;
 import android.os.Handler;
 
-import com.android.launcher.R;
+import cn.noxus.launcher.R;
 
 import java.lang.ref.WeakReference;
 

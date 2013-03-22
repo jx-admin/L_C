@@ -39,7 +39,7 @@ import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.android.launcher.R;
+import cn.noxus.launcher.R;
 
 import java.util.ArrayList;
 
