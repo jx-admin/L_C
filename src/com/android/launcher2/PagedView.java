@@ -42,7 +42,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 import java.util.ArrayList;
 

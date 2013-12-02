@@ -25,7 +25,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 public class HolographicLinearLayout extends LinearLayout {
 

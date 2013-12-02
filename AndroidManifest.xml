@@ -19,13 +19,13 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.noxus.launcher"
+    package="cn.google.launcher"
     android:versionCode="8"
     android:versionName="1.5.0"
     >
 
     <original-package android:name="com.android.launcher2" />
-    <uses-sdk android:targetSdkVersion="17" android:minSdkVersion="16" />
+    <uses-sdk android:targetSdkVersion="17" android:minSdkVersion="17" />
 
     <permission
         android:name="com.android.launcher.permission.PRELOAD_WORKSPACE"

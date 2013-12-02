@@ -27,7 +27,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 /**
  * This class adds a stroke to the generic TextView allowing the text to stand out better against

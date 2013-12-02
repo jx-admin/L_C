@@ -49,7 +49,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 import com.android.launcher2.LauncherSettings.Favorites;
 
 import org.xmlpull.v1.XmlPullParser;

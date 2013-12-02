@@ -16,7 +16,7 @@
 
 package com.android.launcher2;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 import android.app.Activity;
 import android.app.DialogFragment;

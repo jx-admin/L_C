@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 /**
  * An abstraction of the original CellLayout which supports laying out items

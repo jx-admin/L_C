@@ -24,7 +24,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.widget.Toast;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;

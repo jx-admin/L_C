@@ -94,7 +94,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 import com.android.launcher2.DropTarget.DragObject;
 
 import java.io.DataInputStream;
@@ -130,6 +130,7 @@ public final class Launcher extends Activity
     private static final int MENU_MANAGE_APPS = MENU_WALLPAPER_SETTINGS + 1;
     private static final int MENU_SYSTEM_SETTINGS = MENU_MANAGE_APPS + 1;
     private static final int MENU_HELP = MENU_SYSTEM_SETTINGS + 1;
+    private static final int MENU_SWITCH_TO_CHANGE_LAUNCHER = MENU_HELP + 1;
 
     private static final int REQUEST_CREATE_SHORTCUT = 1;
     private static final int REQUEST_CREATE_APPWIDGET = 5;
@@ -1339,9 +1340,12 @@ public final class Launcher extends Activity
     };
 
     void addWidgetToAutoAdvanceIfNeeded(View hostView, AppWidgetProviderInfo appWidgetInfo) {
+    	Log.i("E", "----------------------------------------------------- before , appWidgetInfo.autoAdvanceViewId=" + appWidgetInfo.autoAdvanceViewId);
         if (appWidgetInfo == null || appWidgetInfo.autoAdvanceViewId == -1) return;
         View v = hostView.findViewById(appWidgetInfo.autoAdvanceViewId);
         if (v instanceof Advanceable) {
+        	
+        	Log.i("E", "----------------------------------------------------- after ");
             mWidgetsToAdvance.put(hostView, appWidgetInfo);
             ((Advanceable) v).fyiWillBeAdvancedByHostKThx();
             updateRunning();
@@ -1349,6 +1353,8 @@ public final class Launcher extends Activity
     }
 
     void removeWidgetToAutoAdvance(View hostView) {
+    	Log.i("E","mWidgetsToAdvance:" + mWidgetsToAdvance.values().toString());
+		Log.i("E", "contains:" + mWidgetsToAdvance.containsKey(hostView));
         if (mWidgetsToAdvance.containsKey(hostView)) {
             mWidgetsToAdvance.remove(hostView);
             updateRunning();
@@ -1623,6 +1629,10 @@ public final class Launcher extends Activity
         Intent settings = new Intent(android.provider.Settings.ACTION_SETTINGS);
         settings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        Intent swithToChangeLauncher = new Intent();
+        ComponentName cName = new ComponentName("cn.noxus.launcher", "cn.noxus.launcher.Launcher");
+        swithToChangeLauncher.putExtra("ORIGIN", "ORIGIN");
+        swithToChangeLauncher.setComponent(cName);
         String helpUrl = getString(R.string.help_url);
         Intent help = new Intent(Intent.ACTION_VIEW, Uri.parse(helpUrl));
         help.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
@@ -1635,10 +1645,14 @@ public final class Launcher extends Activity
             .setIcon(android.R.drawable.ic_menu_manage)
             .setIntent(manageApps)
             .setAlphabeticShortcut('M');
+        menu.add(0, MENU_SWITCH_TO_CHANGE_LAUNCHER, 0, R.string.menu_switch_to_change_launcher)
+        .setIntent(swithToChangeLauncher)
+        .setAlphabeticShortcut('C');
         menu.add(0, MENU_SYSTEM_SETTINGS, 0, R.string.menu_settings)
             .setIcon(android.R.drawable.ic_menu_preferences)
             .setIntent(settings)
             .setAlphabeticShortcut('P');
+        
         if (!helpUrl.isEmpty()) {
             menu.add(0, MENU_HELP, 0, R.string.menu_help)
                 .setIcon(android.R.drawable.ic_menu_help)
@@ -1667,6 +1681,9 @@ public final class Launcher extends Activity
         case MENU_WALLPAPER_SETTINGS:
             startWallpaper();
             return true;
+        case MENU_SWITCH_TO_CHANGE_LAUNCHER:
+        	this.finish();
+        	return true;
         }
 
         return super.onOptionsItemSelected(item);

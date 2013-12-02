@@ -33,7 +33,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 public class Cling extends FrameLayout {
 

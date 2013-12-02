@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RemoteViews;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 /**
  * {@inheritDoc}

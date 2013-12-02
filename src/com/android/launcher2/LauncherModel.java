@@ -47,7 +47,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 import com.android.launcher2.InstallWidgetReceiver.WidgetMimeTypeHandlerData;
 
 import java.lang.ref.WeakReference;

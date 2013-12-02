@@ -19,7 +19,7 @@ package com.android.launcher2;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 import android.app.WallpaperManager;
 import android.content.BroadcastReceiver;

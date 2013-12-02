@@ -59,7 +59,7 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 import com.android.launcher2.DropTarget.DragObject;
 
 import java.lang.ref.WeakReference;
@@ -428,10 +428,22 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     private void updatePageCounts() {
+    	filterApps();
         mNumWidgetPages = (int) Math.ceil(mWidgets.size() /
                 (float) (mWidgetCountX * mWidgetCountY));
         mNumAppsPages = (int) Math.ceil((float) mApps.size() / (mCellCountX * mCellCountY));
     }
+    
+    private void filterApps() {
+		for (int i = 0; i < mApps.size(); i++) {
+			if (mApps.get(i).getPackageName().equals("cn.noxus.launcher") || mApps.get(i).getPackageName().equals("cn.noxus.theme") 
+					|| mApps.get(i).getPackageName().equals("cn.google.launcher") || mApps.get(i).getPackageName().equals("com.noxus.user")
+					) {
+				mApps.remove(i);
+				return;
+			}
+		}
+	}
 
     protected void onDataReady(int width, int height) {
         // Note that we transpose the counts in portrait so that we get a similar layout

@@ -33,7 +33,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.inputmethod.InputMethodManager;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 import java.util.ArrayList;
 

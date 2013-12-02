@@ -24,7 +24,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 
 /**

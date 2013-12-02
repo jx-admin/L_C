@@ -34,7 +34,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PaintDrawable;
 import android.util.DisplayMetrics;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 /**
  * Various utilities shared amongst the Launcher's classes.

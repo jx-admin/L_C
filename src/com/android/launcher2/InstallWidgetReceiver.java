@@ -33,7 +33,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import cn.noxus.launcher.R;
+import cn.google.launcher.R;
 
 
 /**
